@@ -1,33 +1,47 @@
-const rock = 0;
-const paper = 1;
-const scissors = 2; 
-
 
 
 const GameValues = ["rock", "paper", "scissors"];
-const WinningCombos = [0 > 2, 2 > 1, 1 > 0];
 let PlayerPoints = 0;
 let ComputerPoints = 0;
 
     
 function ComputerPlay(){
-    return GameValues[Math.floor(math.random() * GameValues.length)];
+    return GameValues[Math.floor(Math.random() * GameValues.length)];
+  }
+  
+  
+  const PlayerSelection = prompt("enter your selection here");
+  const ComputerSelection =  ComputerPlay();
+
+function PlayRound(PlayerSelection,ComputerSelection){
+  if (ComputerPlay === PlayerSelection){
+    return("players have tied");
+
+  } else if ( ComputerPlay === "rock" && PlayerSelection === "scissors"){
+    return("computer wins with "  +ComputerSelection);
+  }
+
+  else if (ComputerPlay === "paper" && PlayerSelection === "rock") {
+   return ("computer wins with"  +ComputerSelection);
+  }
+
+  else if (ComputerPlay === "scissors" && PlayerSelection === "paper"){ 
+    return("computer wins with" +ComputerSelection);
+  }
+
+  else if (ComputerPlay === "scissors" && PlayerSelection === "rock") {
+    return("Player wins with"  +PlayerSelection);
+  }
+
+  else if (ComputerPlay === "rock" && PlayerSelection === "paper") {
+    return("player wins with"  +PlayerSelection);
+  }
+
+  else ( ComputerPlay === "paper" && PlayerSelection === "scissors"); { 
+    return("player wins with"  +PlayerSelection);
+  }
+
 }
+alert(ComputerPlay);
+alert(PlayRound(PlayerSelection,ComputerSelection));
 
-const PlayerSelection = prompt();
-const ComputerSelection =  ComputerPlay();
-
-function PlayRound(PlayerSelection, ComputerSelection,){
-    if (ComputerSelection > PlayerSelection)
-        alert ("The computer wins with" +ComputerSelection);
-    else{
-        alert ("Player wins with" +PlayerSelection);
-}
-}
-
-function Game(i=0, i++ i<=5); //this probably won't work 
-PlayRound()
-
-
-
- 
