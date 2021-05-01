@@ -42,6 +42,6 @@ function PlayRound(PlayerSelection,ComputerSelection){
   }
 
 }
-alert(ComputerPlay);
+//function GameRound(Playround) doesn't work
 alert(PlayRound(PlayerSelection,ComputerSelection));
 
