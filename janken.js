@@ -56,10 +56,6 @@ function PlayRound(PlayerSelection,ComputerSelection){
 let RoundResult = PlayRound(PlayerSelection,ComputerSelection);
 
 //supposed to run 5 rounds of the game, doesn't yet. think it has to do with the syntax, read this https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#while_statement
-//function GameAutomator(){
-//  for (let i=0; i<5; i++);
-//  return(PlayRound(PlayerSelection,ComputerSelection));
-//}
 
 function GameAutomator(){
 let i=0;
@@ -70,11 +66,7 @@ let i=0;
   
 }
 console.log(GameAutomator());
-//function ScoreTable(PlayRound(PlayerSelection,ComputerSelection)){
-//  return(PlayerPoints,ComputerPoints);
-//}
-//this shows the result of the round on screen with an alert
-//alert(GameAutomator);
+
 //will accept any input "used rock paper scissors": currently unresolved
 //logic always results in player winning: this has been resolved computer play was in the logic instead of the computer selection 
 
