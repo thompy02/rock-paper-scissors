@@ -11,40 +11,71 @@ function ComputerPlay(){
   
   //these just prompt the user for a choice and then puts the computer play function in to a constant to be used elsewhere
   const PlayerSelection = prompt("enter your selection here");
+  const PlayerInput = PlayerSelection;
   const ComputerSelection =  ComputerPlay();
 
 //this function manages the logic between player and computer choices returning the winner
 function PlayRound(PlayerSelection,ComputerSelection){
-  if (ComputerSelection === PlayerSelection){
+  if (ComputerSelection === PlayerInput){
+    ComputerPoints++;
     return("players have tied");
+    
 
-  } else if ( ComputerSelection === "rock" && PlayerSelection === "scissors"){
+  } else if ( ComputerSelection === "rock" && PlayerInput === "scissors"){
+    ComputerPoints++;
     return("computer wins with "  +ComputerSelection);
   }
 
-  else if (ComputerSelection === "paper" && PlayerSelection === "rock") {
-   return ("computer wins with"  +ComputerSelection);
+  else if (ComputerSelection === "paper" && PlayerInput === "rock") {
+    ComputerPoints++;
+   return ("computer wins with "  +ComputerSelection);
   }
 
-  else if (ComputerSelection === "scissors" && PlayerSelection === "paper"){ 
-    return("computer wins with" +ComputerSelection);
+  else if (ComputerSelection === "scissors" && PlayerInput === "paper"){ 
+    PlayerPoints++;
+    return("computer wins with " +ComputerSelection);
   }
 
-  else if (ComputerSelection === "scissors" && PlayerSelection === "rock") {
-    return("Player wins with"  +PlayerSelection);
+  else if (ComputerSelection === "scissors" && PlayerInput === "rock") {
+    PlayerPoints++;
+    return("Player wins with "  +PlayerInput);
   }
 
-  else if (ComputerSelection === "rock" && PlayerSelection === "paper") {
-    return("player wins with"  +PlayerSelection);
+  else if (ComputerSelection === "rock" && PlayerInput === "paper") {
+    PlayerPoints++;
+    return("player wins with "  +PlayerInput);
   }
 
-  else ( ComputerSelection === "paper" && PlayerSelection === "scissors"); { 
-    return("player wins with"  +PlayerSelection);
+  else ( ComputerSelection === "paper" && PlayerInput === "scissors"); { 
+    PlayerPoints++;
+    return("player wins with "  +PlayerInput);
   }
 
 }
-//this shows the result of the round on screen with an alert
-alert(PlayRound(PlayerSelection,ComputerSelection));
 
+let RoundResult = PlayRound(PlayerSelection,ComputerSelection);
+
+//supposed to run 5 rounds of the game, doesn't yet. think it has to do with the syntax, read this https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#while_statement
+//function GameAutomator(){
+//  for (let i=0; i<5; i++);
+//  return(PlayRound(PlayerSelection,ComputerSelection));
+//}
+
+function GameAutomator(){
+let i=0;
+  do {
+    i++
+    return(RoundResult);
+  } while (i<5);
+  
+}
+console.log(GameAutomator());
+//function ScoreTable(PlayRound(PlayerSelection,ComputerSelection)){
+//  return(PlayerPoints,ComputerPoints);
+//}
+//this shows the result of the round on screen with an alert
+//alert(GameAutomator);
 //will accept any input "used rock paper scissors": currently unresolved
 //logic always results in player winning: this has been resolved computer play was in the logic instead of the computer selection 
+
+//can I just input a fucking array of choices?
