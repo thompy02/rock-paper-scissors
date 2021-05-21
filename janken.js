@@ -14,7 +14,8 @@ function ComputerPlay(){
   //let PlayerInput = prompt("enter your selection here");
   let ComputerSelection =  ComputerPlay();
 
-  let ScoreReporter = ("computer points are " +ComputerPoints) && ("player points are " +PlayerPoints);
+  let PlayerScoreReporter = ("player points are " +PlayerPoints);
+  let ComputerScoreReporter = ("computer points are " +ComputerPoints);
  
 
 
@@ -24,45 +25,47 @@ function PlayRound(ComputerSelection){
   let PlayerInput = prompt("enter your selection here");
 
   if (ComputerSelection === PlayerInput){
-    return("players have tied");
+    console.log("players have tied");
     
 
-  } else if ( ComputerSelection === "rock" && PlayerInput === "scissors"){
+  } 
+  
+  else if ( ComputerSelection === "rock" && PlayerInput === "scissors"){
     ComputerPoints++;
     RoundsPlayed++;
-    return("computer wins with " +ComputerSelection);
+    console.log("computer wins with " +ComputerSelection);
    
   }
 
   else if (ComputerSelection === "paper" && PlayerInput === "rock") {
    ComputerPoints++;
    RoundsPlayed++;
-   return ("computer wins with " +ComputerSelection);
+   console.log ("computer wins with " +ComputerSelection);
   
   }
 
   else if (ComputerSelection === "scissors" && PlayerInput === "paper"){ 
     ComputerPoints++;
     RoundsPlayed++;
-    return("computer wins with "+ComputerSelection);
+    console.log("computer wins with "+ComputerSelection);
   }
 
-  else if (ComputerSelection === "scissors" && PlayerInput === "rock") {
+  else if (PlayerInput === "rock" && ComputerSelection === "scissors") {
     PlayerPoints++;
     RoundsPlayed++;
-    return("Player wins with " +PlayerInput);
+    console.log("Player wins with " +PlayerInput);
   }
-
-  else if (ComputerSelection === "rock" && PlayerInput === "paper") {
+  
+  else if (PlayerInput === "paper" && ComputerSelection === "rock") {
     PlayerPoints++;
     RoundsPlayed++;
-    return("player wins with " +PlayerInput);
+    console.log("player wins with " +PlayerInput);
   }
-
-  else ( ComputerSelection === "paper" && PlayerInput === "scissors"); { 
+  
+  else (PlayerInput === "scissors" && ComputerSelection === "paper"); { 
     PlayerPoints++;
     RoundsPlayed++;
-    return("player wins with " +PlayerInput);
+    console.log("player wins with " +PlayerInput);
   }
 
   
@@ -77,14 +80,30 @@ function game(){
  PlayRound(ComputerSelection);
  PlayRound(ComputerSelection);
  PlayRound(ComputerSelection);
+ 
+ console.log(PlayerScoreReporter);
+ console.log(ComputerScoreReporter);
+ 
+ if (ComputerScoreReporter > PlayerScoreReporter){
+   console.log("the computer has won!")
+ }
+
+ else (ComputerScoreReporter < PlayerScoreReporter);{
+  console.log("the player has won!")
+}
+
 }
 
 
-console.log(game());
-//will accept any input "used rock paper scissors": currently unresolved
+ game();
+
+
+
+//will accept any input "used rock paper scissors": (incomplete)
 //need to make it case insensitive too (Incomplete)
 //logic always results in player winning: this has been resolved computer play was in the logic instead of the computer selection (COMPLETE)
-//the gmae function isn't working it should probably be a button that can initiate a new instance
+//the gmae function isn't working it should probably be a button that can initiate a new instance (resolved)
+//SCOREKEEPING 
 
-//can I just input a fucking array of choices?
-//SCOREKEEPING
+
+
