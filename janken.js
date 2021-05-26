@@ -30,49 +30,42 @@ function PlayRound(ComputerSelection){
 
   } 
   
-  else if ( ComputerSelection === "rock" && PlayerInput === "scissors"){
+  if ( ComputerSelection === "rock" && PlayerInput === "scissors"){
     ComputerPoints++;
-    RoundsPlayed++;
     console.log("computer wins with " +ComputerSelection);
    
   }
-
-  else if (ComputerSelection === "paper" && PlayerInput === "rock") {
+  
+   if (ComputerSelection === "paper" && PlayerInput === "rock") {
    ComputerPoints++;
-   RoundsPlayed++;
    console.log ("computer wins with " +ComputerSelection);
   
   }
-
-  else if (ComputerSelection === "scissors" && PlayerInput === "paper"){ 
+  
+   if (ComputerSelection === "scissors" && PlayerInput === "paper"){ 
     ComputerPoints++;
-    RoundsPlayed++;
     console.log("computer wins with "+ComputerSelection);
   }
-
-  else if (PlayerInput === "rock" && ComputerSelection === "scissors") {
+  
+   if (PlayerInput === "rock" && ComputerSelection === "scissors") {
     PlayerPoints++;
-    RoundsPlayed++;
     console.log("Player wins with " +PlayerInput);
   }
   
-  else if (PlayerInput === "paper" && ComputerSelection === "rock") {
+   if (PlayerInput === "paper" && ComputerSelection === "rock") {
     PlayerPoints++;
-    RoundsPlayed++;
     console.log("player wins with " +PlayerInput);
   }
   
-  else (PlayerInput === "scissors" && ComputerSelection === "paper"); { 
+  if (PlayerInput === "scissors" && ComputerSelection === "paper"); { 
     PlayerPoints++;
-    RoundsPlayed++;
     console.log("player wins with " +PlayerInput);
   }
-
   
 }
 
 
-//supposed to run 5 rounds of the game, doesn't yet. think it has to do with the syntax, read this https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#while_statement
+// runs 5 rounds of the game
 
 function game(){
  PlayRound(ComputerSelection);
@@ -81,14 +74,14 @@ function game(){
  PlayRound(ComputerSelection);
  PlayRound(ComputerSelection);
  
- console.log(PlayerScoreReporter);
- console.log(ComputerScoreReporter);
+ console.log(PlayerPoints);
+ console.log(ComputerPoints);
  
- if (ComputerScoreReporter > PlayerScoreReporter){
+ if (ComputerPoints > PlayerPoints){
    console.log("the computer has won!")
  }
 
- else (ComputerScoreReporter < PlayerScoreReporter);{
+ else (ComputerPoints < PlayerPoints);{
   console.log("the player has won!")
 }
 
@@ -103,7 +96,8 @@ function game(){
 //need to make it case insensitive too (Incomplete)
 //logic always results in player winning: this has been resolved computer play was in the logic instead of the computer selection (COMPLETE)
 //the gmae function isn't working it should probably be a button that can initiate a new instance (resolved)
-//SCOREKEEPING 
+//SCOREKEEPING (COMPLETE)
+
 
 
 
