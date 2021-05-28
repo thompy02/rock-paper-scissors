@@ -12,7 +12,7 @@ function ComputerPlay(){
   
   //these just prompt the user for a choice and then puts the computer play function in to a constant to be used elsewhere
   //let PlayerInput = prompt("enter your selection here");
-  let ComputerSelection =  ComputerPlay();
+  
 
   let PlayerScoreReporter = ("player points are " +PlayerPoints);
   let ComputerScoreReporter = ("computer points are " +ComputerPoints);
@@ -20,9 +20,11 @@ function ComputerPlay(){
 
 
 //this function manages the logic between player and computer choices returning the winner
-function PlayRound(ComputerSelection){
+function PlayRound(){
 
+  let ComputerSelection =  ComputerPlay();
   let PlayerInput = prompt("enter your selection here");
+  
 
   if (ComputerSelection === PlayerInput){
     console.log("players have tied");
@@ -30,65 +32,54 @@ function PlayRound(ComputerSelection){
 
   } 
   
-  if ( ComputerSelection === "rock" && PlayerInput === "scissors"){
+  if ( ComputerSelection === "rock" && PlayerInput === "scissors" || 
+        ComputerSelection === "paper" && PlayerInput === "rock" || 
+          ComputerSelection === "scissors" && PlayerInput === "paper"){
     ComputerPoints++;
     console.log("computer wins with " +ComputerSelection);
    
   }
   
-   if (ComputerSelection === "paper" && PlayerInput === "rock") {
-   ComputerPoints++;
-   console.log ("computer wins with " +ComputerSelection);
-  
-  }
-  
-   if (ComputerSelection === "scissors" && PlayerInput === "paper"){ 
-    ComputerPoints++;
-    console.log("computer wins with "+ComputerSelection);
-  }
-  
-   if (PlayerInput === "rock" && ComputerSelection === "scissors") {
+   else if (ComputerSelection === "scissors" && PlayerInput === "rock" ||
+              ComputerSelection === "rock" && PlayerInput === "paper" || 
+                ComputerSelection === "paper" && PlayerInput === "scissors" ) {
     PlayerPoints++;
     console.log("Player wins with " +PlayerInput);
   }
-  
-   if (PlayerInput === "paper" && ComputerSelection === "rock") {
-    PlayerPoints++;
-    console.log("player wins with " +PlayerInput);
-  }
-  
-  if (PlayerInput === "scissors" && ComputerSelection === "paper"); { 
-    PlayerPoints++;
-    console.log("player wins with " +PlayerInput);
-  }
-  
+
+  console.log(ComputerSelection)
+  console.log(PlayerInput)
 }
 
 
 // runs 5 rounds of the game
 
 function game(){
- PlayRound(ComputerSelection);
- PlayRound(ComputerSelection);
- PlayRound(ComputerSelection);
- PlayRound(ComputerSelection);
- PlayRound(ComputerSelection);
+ PlayRound();
+ PlayRound();
+ PlayRound();
+ PlayRound();
+ PlayRound();
  
- console.log(PlayerPoints);
- console.log(ComputerPoints);
+ //reports the final points for view of the player
+ console.log("these are the computer points " +ComputerPoints);
+ console.log("these are the player points " +PlayerPoints);
  
+ //logic to report who has won overall
  if (ComputerPoints > PlayerPoints){
    console.log("the computer has won!")
  }
 
- else (ComputerPoints < PlayerPoints);{
+ else if (ComputerPoints < PlayerPoints){
   console.log("the player has won!")
 }
 
+ else if (ComputerPoints = PlayerPoints){
+   console.log("the score is tied")
+ }
 }
 
-
- game();
+game();
 
 
 
